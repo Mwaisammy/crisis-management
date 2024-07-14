@@ -1,0 +1,21 @@
+{% extends 'App/base.html' %}
+
+{% block content %}
+    <h2>Latest Alerts</h2>
+    <ul>
+        {% for alert in alerts %}
+            <li>
+                <a href="{% url 'alert_detail' alert.pk %}">{{ alert.title }}</a>
+                - {{ alert.location }}
+                - {{ alert.date_created|date:"F d, Y H:i" }} {# Format date as desired #}
+                <small>
+                    {% if user.is_authenticated  %}
+                        - <a href="{% url 'alert_update' alert.pk %}">(Edit)</a>
+                        {# Uncomment the delete option when ready to implement #}
+                        {% comment %}<!--<a href="{% url 'alert_delete' alert.pk %}">(Delete)</a>{% endcomment %}-->
+                    {% endif %}
+                </small>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

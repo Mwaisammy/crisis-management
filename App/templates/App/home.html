@@ -1,0 +1,68 @@
+{% extends "App/base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<title>Home</title>
+{% endblock %}
+
+
+{% block content %}
+
+<title>Home</title>
+    <style>
+        .platform-info {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .platform-info h2 {
+            margin-top: 0;
+        }
+    </style> 
+<body>
+    <div class="intro">
+    <h1>Welcome to the Community Crisis Communication Platform</h1>
+    </div>
+    
+    {% if user.is_authenticated %}
+
+        <div class="platform-info">
+            <h2>About the Platform</h2>
+            <p>Welcome to the Community Crisis Communication Platform. This platform is designed to help communities manage and disseminate information during crises. Whether it’s a natural disaster, a health emergency, or any other critical situation, our platform provides the tools and resources needed to stay informed and connected.</p>
+
+            <h3>Key Features and Services</h3>
+            <ul>
+                <li><strong>Emergency Alerts:</strong> Receive timely notifications about ongoing crises and emergencies.</li>
+                <li><strong>Resource Exchange:</strong> Share and request resources such as food, clothing, and shelter.</li>
+                <li><strong>Community Forums:</strong> Engage in discussions and share information with other community members.</li>
+                <li><strong>Interactive Map:</strong> View and update information about crisis-affected areas.</li>
+                <li><strong>Emergency Contacts Directory:</strong> Access important contact information for emergency services and organizations.</li>
+            </ul>
+
+            <h3>How to Use the Platform</h3>
+            <ol>
+                <li><strong>Create an Account:</strong> Sign up and complete your profile to get started.</li>
+                <li><strong>Stay Informed:</strong> Check the latest alerts and updates on the homepage.</li>
+                <li><strong>Participate:</strong> Join forums, post updates, and contribute to the community.</li>
+                <li><strong>Request Help:</strong> Use the resource exchange feature to request or offer help.</li>
+            </ol>
+
+            <h3>Community Involvement</h3>
+            <p>We believe in the power of community. By sharing information and resources, we can help each other during difficult times. Your participation is crucial. Whether you are offering assistance or in need of help, your involvement makes a difference.</p>
+
+            <h3>Support and Contact Information</h3>
+            <p>If you need assistance or have any questions, please reach out to us at:</p>
+            <ul>
+                <li>Email: support@crisisplatform.org</li>
+                <li>Phone: +254 790 117 305</li>
+                <li>Address: 123 Crisis Avenue, Support City</li>
+            </ul>
+        </div>
+    {% else %}
+        <p>Please log in to read more about the platform.</p>
+    {% endif %}
+
+{% endblock %}
+
