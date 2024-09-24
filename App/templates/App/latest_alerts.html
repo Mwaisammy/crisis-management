@@ -1,6 +1,10 @@
 {% extends 'App/base.html' %}
 
+<link rel="stylesheet" href="../../static/css/styles.css">
+
 {% block content %}
+
+<div class="alerts">
     <h2>Latest Alerts</h2>
     <ul>
         {% for alert in alerts %}
@@ -18,4 +22,7 @@
             </li>
         {% endfor %}
     </ul>
+
+
+</div>
 {% endblock %}

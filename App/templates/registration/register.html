@@ -1,19 +1,36 @@
-{% extends 'App/base.html' %}
+<!-- {% extends 'App/base.html' %}
 {% block title%}Register{% endblock%}
 
-{% block content %}
+{% block content %} -->
 
 
-<h1>Register....</h1>
-<br/><br/>
-<div class="mb-3">
+<link rel="stylesheet" href="../../static/css/styles.css">
 
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-secondary">Register</buttton>
-    </form>
+<div class="register">
+
+    <div class="register-inner">
+
+        <div>
+
+            
+                <h1>Register</h1>
+    
+                <div class="separator"></div>
+
+        </div>
+
+            <div class="">
+            
+                <form method="POST" class="register-form">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="">Register</buttton>
+                </form>
+            </div>
+
+    </div>
+
 </div>
 
-{% endblock %}
+<!-- {% endblock %} -->
 
